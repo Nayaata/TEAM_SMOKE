@@ -46,13 +46,6 @@ namespace PingPong
 
             Console.ReadKey();
             Console.Clear();
-
-            //ring oneRow = "Player's controls:";
-            //nsole.ForegroundColor = ConsoleColor.Cyan;
-            //ring twoRow = "Leftarow (<-) - Left";
-            //ring threeRow = "Rightarow (->) - Right";
-            //ring text = "\n" + oneRow + "\n0" + twoRow + "\n0" + threeRow;
-            //nsole.WriteLine(String.Format("{0," + Console.WindowWidth / 2 + "}", "TEXT"));
         }
 
         static char symbolPaddle = '=';
