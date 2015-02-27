@@ -106,10 +106,14 @@ namespace PingPong
                 string line = reader.ReadLine();
                 while (line != null)
                 {
-                    string[] splitLine = line.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
-                    string username = splitLine[0];
-                    int score = int.Parse(splitLine[1]);
-                    database.Add(username, score);
+                    if (line != "")
+                    {
+                        string[] splitLine = line.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
+                        string username = splitLine[0];
+                        int score = int.Parse(splitLine[1]);
+                        database.Add(username, score);
+                    }
+
                     line = reader.ReadLine();
                 }
             }
