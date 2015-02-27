@@ -12,7 +12,7 @@ namespace PingPong
     class PingPong
     {
         static void Main()
-        {
+        {a
         }
     }
 }
