@@ -106,7 +106,7 @@ namespace PingPong
                 string line = reader.ReadLine();
                 while (line != null)
                 {
-                    if (line != "")
+                    if (!string.IsNullOrEmpty(line))
                     {
                         string[] splitLine = line.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
                         string username = splitLine[0];
