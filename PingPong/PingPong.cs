@@ -1,4 +1,4 @@
-﻿//The first team project.
+//The first team project.
 
 
 using System;
@@ -6,16 +6,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-<<<<<<< HEAD
 using System.Threading;
-=======
 
->>>>>>> 1af8dd3331d2a00f5f0adb95a7c45fdead70df7e
+
+
 namespace PingPong
 {
     class PingPong
     {
-<<<<<<< HEAD
+
         static char symbolPaddle = '=';
         static int PaddleLength = 10;
         static int PaddlePositionX = Console.WindowWidth / 2 - PaddleLength / 2;
@@ -70,10 +69,8 @@ namespace PingPong
         {
             ConsoleParameters();
             MovePaddle();
-=======
-        static void Main()
-        {a
->>>>>>> 1af8dd3331d2a00f5f0adb95a7c45fdead70df7e
         }
+
+
     }
 }
