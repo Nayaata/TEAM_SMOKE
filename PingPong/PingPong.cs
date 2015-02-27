@@ -15,8 +15,8 @@ namespace PingPong
 {
     class PingPong
     { 
-        private static Dictionary<string, int> database; \\ Todor Dimitrov
-        private static string currentUsername;           \\ Todor Dimitrov
+        private static Dictionary<string, int> database; // Todor Dimitrov
+        private static string currentUsername;           // Todor Dimitrov
         static char symbolPaddle = '=';
         static int PaddleLength = 10;
         static int PaddlePositionX = Console.WindowWidth / 2 - PaddleLength / 2;
@@ -69,13 +69,13 @@ namespace PingPong
         }
         static void Main()
         {
-            database = new Dictionary<string, int>(); \\ Todor Dimitrov
-            LoadResults();                            \\ Todor Dimitrov
-            RegisterPlayer();                         \\ Todor Dimitrov
+            database = new Dictionary<string, int>(); // Todor Dimitrov
+            LoadResults();                            // Todor Dimitrov
+            RegisterPlayer();                         // Todor Dimitrov
             ConsoleParameters();
             MovePaddle();
         }
-        private static void RegisterPlayer() \\ Todor Dimitrov
+        private static void RegisterPlayer() // Todor Dimitrov
         {
             Console.Write("Enter your username: ");
             currentUsername = Console.ReadLine();
@@ -86,7 +86,7 @@ namespace PingPong
             }
             Console.Clear();
         }
-        private static void SaveChanges() \\ Todor Dimitrov
+        private static void SaveChanges() // Todor Dimitrov
         {
             StreamWriter writer = new StreamWriter("..\\..\\..\\results.txt");
             using (writer)
@@ -98,7 +98,7 @@ namespace PingPong
                 }
             }
         }
-        private static void LoadResults() \\ Todor Dimitrov
+        private static void LoadResults() // Todor Dimitrov
         {
             StreamReader reader = new StreamReader("..\\..\\..\\results.txt");
             using (reader)
