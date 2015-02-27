@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
 
 
 
@@ -14,7 +15,8 @@ namespace PingPong
 {
     class PingPong
     {
-
+        private static Dictionary<string, int> database;
+        private static string currentUsername;
         static char symbolPaddle = '=';
         static int PaddleLength = 10;
         static int PaddlePositionX = Console.WindowWidth / 2 - PaddleLength / 2;
@@ -67,10 +69,50 @@ namespace PingPong
         }
         static void Main()
         {
+            database = new Dictionary<string, int>();
+            LoadResults();
+            RegisterPlayer();
             ConsoleParameters();
             MovePaddle();
         }
-
-
+        private static void RegisterPlayer()
+        {
+            Console.Write("Enter your username: ");
+            currentUsername = Console.ReadLine();
+            if (!database.Keys.Any(username => username == currentUsername))
+            {
+                database.Add(currentUsername, 0);
+                SaveChanges();
+            }
+            Console.Clear();
+        }
+        private static void SaveChanges()
+        {
+            StreamWriter writer = new StreamWriter("..\\..\\..\\results.txt");
+            using (writer)
+            {
+                foreach (var item in database)
+                {
+                    string line = String.Format("{0}-{1}", item.Key, item.Value);
+                    writer.WriteLine(line);
+                }
+            }
+        }
+        private static void LoadResults()
+        {
+            StreamReader reader = new StreamReader("..\\..\\..\\results.txt");
+            using (reader)
+            {
+                string line = reader.ReadLine();
+                while (line != null)
+                {
+                    string[] splitLine = line.Split(new char[] { '-' }, StringSplitOptions.RemoveEmptyEntries);
+                    string username = splitLine[0];
+                    int score = int.Parse(splitLine[1]);
+                    database.Add(username, score);
+                    line = reader.ReadLine();
+                }
+            }
+        }
     }
 }
