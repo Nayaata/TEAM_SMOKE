@@ -16,9 +16,30 @@ namespace PingPong
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.BackgroundColor = ConsoleColor.DarkCyan;
-            Console.BufferHeight = Console.WindowHeight = 30;
+            Console.BufferHeight = Console.WindowHeight = 40;
             Console.BufferWidth = Console.WindowWidth = 100;
+            
+            int height = Console.BufferHeight;
+            int width = Console.BufferWidth;
+            for (int i = 0; i < width; i++)
+            {      
+                Console.Write("_");
+            }
+            for (int i = 1; i < height-1; i++)
+            {
+                Console.SetCursorPosition(0, i);
+                Console.Write("-|");
+                Console.SetCursorPosition(width-2, i);
+                Console.Write("|-");
+                Console.SetCursorPosition(0, i);
+            }
 
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            char symbol = '\u00AF';
+            for (int i = 0; i < width; i++)
+            {
+                Console.Write(symbol);
+            }
            
         }
 
