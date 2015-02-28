@@ -84,23 +84,23 @@ namespace PingPong
         static void Loading() //Niya Keranova
         {
             int i = 0;
-            while (i != 9)
+            while (i != 8)
             {
                 Console.WriteLine("Loading : (|)");
-                Thread.Sleep(100);
+                Thread.Sleep(50);
                 Console.Clear();
                 Console.WriteLine("Loading : (/)");
-                Thread.Sleep(100);
+                Thread.Sleep(50);
                 Console.Clear();
                 Console.WriteLine("Loading : (~)");
-                Thread.Sleep(100);
+                Thread.Sleep(50);
                 Console.Clear();
                 Console.WriteLine("Loading : (\\)");
-                Thread.Sleep(100);
+                Thread.Sleep(50);
                 Console.Clear();
                 i++;
             }
-        }   
+        }
 
         static char symbolPaddle = '=';
         static int PaddleLength = 10;
