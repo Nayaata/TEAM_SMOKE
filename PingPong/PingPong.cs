@@ -12,24 +12,23 @@ namespace PingPong
     {
         private static Dictionary<string, int> database; // Todor Dimitrov
         private static string currentUsername; // Todor Dimitrov
-        static void ConsoleView()
+        
+        static void ConsoleView() //Niya Keranova
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.BackgroundColor = ConsoleColor.DarkCyan;
-            Console.BufferHeight = Console.WindowHeight = 40;
-            Console.BufferWidth = Console.WindowWidth = 100;
-            
+           
             int height = Console.BufferHeight;
             int width = Console.BufferWidth;
             for (int i = 0; i < width; i++)
-            {      
+            {
                 Console.Write("_");
             }
-            for (int i = 1; i < height-1; i++)
+            for (int i = 1; i < height - 1; i++)
             {
                 Console.SetCursorPosition(0, i);
                 Console.Write("-|");
-                Console.SetCursorPosition(width-2, i);
+                Console.SetCursorPosition(width - 2, i);
                 Console.Write("|-");
                 Console.SetCursorPosition(0, i);
             }
@@ -40,18 +39,18 @@ namespace PingPong
             {
                 Console.Write(symbol);
             }
-           
         }
 
-        static void StartupScreen()
+        static void Startup() //Niya Keranova
         {
+           
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             string title = "PING-PONG GAME";
             Console.CursorLeft = Console.BufferWidth / 2 - title.Length / 2;
             Console.WriteLine(title);
-
+            
             string longestString = "Rightarow (->) - Right";
-            int cursorLeft = Console.BufferWidth - longestString.Length * 2 - 5;
+            int cursorLeft = Console.BufferWidth - longestString.Length * 2 - 10;
 
             Console.CursorTop = 5;
             Console.CursorLeft = cursorLeft;
@@ -67,7 +66,43 @@ namespace PingPong
 
             Console.ReadKey();
             Console.Clear();
+
         }
+        static void Greatings() //Niya Keranova
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            string greatings = "TEAM SMOKE: PING-PONG GAME";
+            int y = Console.WindowHeight / 2;
+            int x = (Console.WindowWidth / 2 + 10) - greatings.Length;
+            Console.SetCursorPosition(x, y);
+
+            for (int i = 0; i < greatings.Length; i++)
+            {
+                Console.Write(greatings[i]);
+                Thread.Sleep(100);
+            }
+            Thread.Sleep(1500);
+        }
+        static void Loading() //Niya Keranova
+        {
+            int i = 0;
+            while (i != 9)
+            {
+                Console.WriteLine("Loading : (|)");
+                Thread.Sleep(100);
+                Console.Clear();
+                Console.WriteLine("Loading : (/)");
+                Thread.Sleep(100);
+                Console.Clear();
+                Console.WriteLine("Loading : (~)");
+                Thread.Sleep(100);
+                Console.Clear();
+                Console.WriteLine("Loading : (\\)");
+                Thread.Sleep(100);
+                Console.Clear();
+                i++;
+            }
+        }   
 
         static char symbolPaddle = '=';
         static int PaddleLength = 10;
@@ -156,7 +191,13 @@ namespace PingPong
          }
         static void Main()
         {
-                     
+            Console.BufferHeight = Console.WindowHeight = 35; //Niya Keranova
+            Console.BufferWidth = Console.WindowWidth = 90;   //Niya Keranova
+            Greatings();    //Niya Keranova
+            Loading();      //Niya Keranova
+            Startup();      //Niya Keranova
+            Loading();      //Niya Keranova
+            ConsoleView();  //Niya Keranova
             database = new Dictionary<string, int>(); // Todor Dimitrov
             LoadResults(); // Todor Dimitrov
             RegisterPlayer(); // Todor Dimitrov
