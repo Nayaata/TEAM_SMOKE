@@ -43,7 +43,6 @@ namespace PingPong
 
         static void Startup() //Niya Keranova
         {
-           
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             string title = "PING-PONG GAME";
             Console.CursorLeft = Console.BufferWidth / 2 - title.Length / 2;
@@ -66,7 +65,6 @@ namespace PingPong
 
             Console.ReadKey();
             Console.Clear();
-
         }
         static void Greatings() //Niya Keranova
         {
