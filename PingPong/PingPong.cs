@@ -10,9 +10,83 @@ namespace PingPong
 {
     class PingPong
     {
+        
         private static Dictionary<string, int> database; // Todor Dimitrov
         private static string currentUsername; // Todor Dimitrov
         
+        static void Logo(int posX, int posY)
+        {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.CursorVisible = false;
+            char[,] matrix ={   {' ', ' ', ' ', '§', ' ', ' ', ' ', ' '},                        
+                                {' ', ' ', '§', ' ', '§', ' ', ' ', ' '},
+                                {' ', '§', ' ', ' ', ' ', '§', ' ', ' '},
+                                {' ', ' ', '§', ' ', ' ', '§', '§', ' '},
+                                {' ', ' ', ' ', '§', ' ', ' ', '§', '§'},
+                                {' ', ' ', '§', '§', ' ', ' ', ' ', '§'},
+                                {' ', ' ', ' ', '§', ' ', ' ', '§', ' '},
+                                {' ', ' ', ' ', ' ', '§', ' ', '§', ' '},
+                                {' ', ' ', ' ', ' ', ' ', '§', ' ', ' '},
+                                {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                                {' ', ' ', ' ', ' ', ' ', '*', ' ', ' '},
+                                {' ', ' ', ' ', ' ', ' ', '*', '*', ' '},
+                                {' ', ' ', ' ', '*', '*', 'X', 'X', '*'},
+                                {' ', ' ', '*', '$', '$', 'X', 'X', '*'},
+                                {' ', '*', '$', 'X', 'X', 'X', '*', ' '},
+                                {'*', '$', 'X', '$', '$', 'X', '$', '*'},
+                                {'*', '$', 'X', '$', '$', 'X', '$', '*'},
+                                {' ', '*', '$', 'X', 'X', '$', '*', ' '},
+                                {' ', ' ', '*', '$', '$', '*', ' ', ' '},
+                                {'-', '-', '-', '-', '-', '-', '-', '-'},
+                                {'\\','S', 'M', 'O', 'K', 'E', '\u00AE', '/'},
+                                {' ', '\\', '_', '_', '_', '_', '/', ' '},
+
+                           };
+            int tmp = 0;
+            while (tmp<5)
+            {
+                tmp++;
+                Console.SetCursorPosition(posX, posY + 11);
+                for (int i = 9; i < matrix.GetLength(0); i++)
+                {
+                    for (int j = 0; j < matrix.GetLength(1); j++)
+                    {
+                        if (matrix[i, j] == 'X')
+                        {
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                        }
+                        else if (matrix[i, j] == '-' || matrix[i, j] == '_' || matrix[i, j] == '\\' || matrix[i, j] == '/')
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                        }
+                        Console.Write(matrix[i, j]);
+                    }
+                    Console.SetCursorPosition(posX, posY + i +2);
+                }
+
+
+                Console.SetCursorPosition(posX, posY + 9);
+                for (int i = 8; i >= 0; i--)
+                {
+                    for (int j = 0; j < matrix.GetLength(1); j++)
+                    {
+   
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.Write(matrix[i, j]);                
+                    }
+                    Console.SetCursorPosition(posX, posY + i);
+                    Thread.Sleep(150);
+                }
+                Console.Clear();
+            }
+            Console.SetCursorPosition(0, 0);
+        }   // Nikk-Dzhurov
+    
+
         static void ConsoleView() //Niya Keranova
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -191,6 +265,8 @@ namespace PingPong
         {
             Console.BufferHeight = Console.WindowHeight = 35; //Niya Keranova
             Console.BufferWidth = Console.WindowWidth = 90;   //Niya Keranova
+            Console.Title = "TEAM SMOKE - PING-PONG GAME";   // Nikk-Dzhurov
+            Logo(40, 5);    // Nikk-Dzhurov
             Greatings();    //Niya Keranova
             Loading();      //Niya Keranova
             Startup();      //Niya Keranova
