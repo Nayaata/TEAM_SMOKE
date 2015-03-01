@@ -16,7 +16,7 @@ namespace PingPong
 
         static int width = 70;
         static int height = 45;
-
+        static ConsoleColor ColorOfPaddle = ConsoleColor.White;
         static char symbolPaddle = '_';
         static char symbolPaddle2 = '*';
         static int PaddleLength = 20;
@@ -233,9 +233,9 @@ namespace PingPong
         }
 
         
-        static void PrintPaddlePossition(int x, int y, char symbolPaddle, int length)
+        static void PrintPaddlePossition(int x, int y, char symbolPaddle, int length, ConsoleColor color)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = color;
             Console.SetCursorPosition(x, y);
             Console.Write(new string(symbolPaddle2, length));
             Console.SetCursorPosition(x, y - 1);
@@ -260,7 +260,7 @@ namespace PingPong
             {
                 PaddlePositionX++;
             }
-            PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength);
+            PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength,ColorOfPaddle);
         }
         static void PlayerMoveRigth(int padPositionX)
         {
@@ -268,7 +268,7 @@ namespace PingPong
             {
                 PaddlePositionX--;
             }
-            PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength);
+            PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength,ColorOfPaddle);
         }
         static void MovePaddle()
         {
@@ -329,15 +329,17 @@ namespace PingPong
          }
         static void Main()
         {
+            int stateOfColor = 1;
+            ConsoleColor[] colours = { ConsoleColor.White, ConsoleColor.Green, ConsoleColor.Red };
             Console.BufferHeight = Console.WindowHeight = 45; //Niya Keranova
             Console.BufferWidth = Console.WindowWidth = 70;    //Niya Keranova
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.Title = "TEAM SMOKE - PING-PONG GAME";   // Nikk-Dzhurov
-            Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
-            Greatings();    //Niya Keranova
-            Loading();      //Niya Keranova
-            Startup();      //Niya Keranova
-            Loading();      //Niya Keranova
+           //Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
+           //Greatings();    //Niya Keranova
+           //Loading();      //Niya Keranova
+           //Startup();      //Niya Keranova
+           //Loading();      //Niya Keranova
             
             //database = new Dictionary<string, int>(); // Todor Dimitrov
             //LoadResults(); // Todor Dimitrov
@@ -347,12 +349,12 @@ namespace PingPong
             ConsoleView();  //Niya Keranova
             Console.ForegroundColor = ConsoleColor.Red;                                                  // Nikk-Dzhurov
             Console.BackgroundColor = ConsoleColor.Black;                                                // Nikk-Dzhurov
-            PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength);          // Nikk-Dzhurov
+            PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength, ColorOfPaddle);    // Nikk-Dzhurov
             PrintAtPosition(BallPosX, BallPosY, '\u00A9', ConsoleColor.Green);                           // Nikk-Dzhurov
             Console.SetCursorPosition((Console.WindowWidth - 23) / 2, Console.WindowHeight / 2);         // Nikk-Dzhurov
             Console.Write("Press any key to start!");                                                    // Nikk-Dzhurov
-            Console.ReadKey();     
-            
+            Console.ReadKey();
+
             
             while (true)
             {
@@ -366,15 +368,24 @@ namespace PingPong
                 ClearBox();                                                                                      // Nikk-Dzhurov
 
 
-                PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength);              // Nikk-Dzhurov
+                PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength, ColorOfPaddle);  // Nikk-Dzhurov
                 PrintAtPosition(BallPosX, BallPosY, '\u00A9', ConsoleColor.Green);                               // Nikk-Dzhurov
+
+
                 if(BallPosY==PaddlePositionY-1)                                                                  // Nikk-Dzhurov
                 {                                                                                                // Nikk-Dzhurov
                     if (BallPosX >= PaddlePositionX && BallPosX <= PaddlePositionX + PaddleLength)               // Nikk-Dzhurov
                     {                                                                                            // Nikk-Dzhurov
+                        ColorOfPaddle = colours[stateOfColor++];                                                 // Nikk-Dzhurov
+                        if (stateOfColor > 2)                                                                    // Nikk-Dzhurov
+                        {                                                                                        // Nikk-Dzhurov
+                            stateOfColor = 0;                                                                    // Nikk-Dzhurov
+                        }                                                                                        // Nikk-Dzhurov
                         BallDirectionUp = true;                                                                  // Nikk-Dzhurov
                     }                                                                                            // Nikk-Dzhurov
                 }                                                                                                // Nikk-Dzhurov
+
+
                 if (BallPosY>PaddlePositionY)                                                                    // Nikk-Dzhurov
                 {                                                                                                // Nikk-Dzhurov
                     Console.SetCursorPosition((Console.WindowWidth - 9) / 2, Console.WindowHeight / 2);          // Nikk-Dzhurov
@@ -383,7 +394,7 @@ namespace PingPong
                     break;                                                                                       // Nikk-Dzhurov
                 }
                 
-                Thread.Sleep(20);
+                Thread.Sleep(30);
                 
             }
         }
