@@ -200,8 +200,6 @@ namespace PingPong
             LoadResults(); // Todor Dimitrov
             RegisterPlayer(); // Todor Dimitrov
             Console.CursorVisible = false;   
-            StartupScreen(); // Niya
-            ConsoleView(); //Niya
             MovePaddle(); // Nicola
         }
     }
