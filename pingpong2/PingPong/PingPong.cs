@@ -34,51 +34,41 @@ namespace PingPong
         {
             if (BallPosX == Console.WindowWidth - 4)
             {
+                SoundOfInpactWall();
                 BallDirectionRight = false;
-
             }
             if (BallPosX == 2)
             {
+                SoundOfInpactWall();
                 BallDirectionRight = true;
-
-
             }
             if (BallPosY == 1)
             {
+                SoundOfInpactWall();
                 BallDirectionUp = false;
-
-
             }
             if (BallPosY == Console.WindowHeight - 3)
             {
+                SoundOfInpactWall();
                 BallDirectionUp = true;
-
-
             }
 
             if (BallDirectionUp)
-            {
+            {               
                 BallPosY--;
-
-
             }
             else
             {
-                BallPosY++;
-                SoundOfJumpBall(); // Chernogorov
+                BallPosY++;           
             }
 
             if (BallDirectionRight)
             {
                 BallPosX++;
-
-
             }
             else
             {
                 BallPosX--;
-
-
             }
         }
         static void PrintAtPosition(int x, int y, char symbol, ConsoleColor color)  // Nikk-Dzhurov
@@ -352,6 +342,12 @@ namespace PingPong
             }
         }
 
+        private static void SoundOfInpactWall() // Chernogorov
+        {
+            SoundPlayer soundWall = new SoundPlayer();
+            soundWall.SoundLocation = @"..\\..\\..\\soundWall.wav";
+            soundWall.Play();
+        }
 
         private static void SoundOfGameNewLive() // Chernogorov
         {
@@ -394,11 +390,11 @@ namespace PingPong
             //Loading();      //Niya Keranova
 
 
-            Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
-            Greatings();    //Niya Keranova
-            Loading();      //Niya Keranova
-            Startup();      //Niya Keranova
-            Loading();      //Niya Keranova
+           // Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
+           // Greatings();    //Niya Keranova
+           // Loading();      //Niya Keranova
+           // Startup();      //Niya Keranova
+           // Loading();      //Niya Keranova
             
 
             //database = new Dictionary<string, int>(); // Todor Dimitrov
@@ -432,6 +428,7 @@ namespace PingPong
                 PrintAtPosition(BallPosX, BallPosY, '\u00A9', ConsoleColor.Green);                               // Nikk-Dzhurov
 
 
+
                 if (BallPosY == PaddlePositionY - 1)                                                                  // Nikk-Dzhurov
                 {                                                                                                // Nikk-Dzhurov
                     if (BallPosX >= PaddlePositionX && BallPosX <= PaddlePositionX + PaddleLength)               // Nikk-Dzhurov
@@ -441,10 +438,11 @@ namespace PingPong
                         {                                                                                        // Nikk-Dzhurov
                             stateOfColor = 0;                                                                    // Nikk-Dzhurov
                         }                                                                                        // Nikk-Dzhurov
+                        SoundOfJumpBall(); // Chernogorov
                         BallDirectionUp = true;                                                                  // Nikk-Dzhurov
                     }                                                                                            // Nikk-Dzhurov
                 }                                                                                                // Nikk-Dzhurov
-
+                
 
                 if (BallPosY > PaddlePositionY)                                                                    // Nikk-Dzhurov
                 {                                                                                                // Nikk-Dzhurov
