@@ -356,14 +356,14 @@ namespace PingPong
         private static void SoundOfGameNewLive() // Chernogorov
         {
             SoundPlayer soundLive = new SoundPlayer();
-            soundLive.SoundLocation = @"F:\GIT\C#\TEAM_SMOKE\pingpong2\PingPong\newLive.wav";
+            soundLive.SoundLocation = @"..\\..\\..\\newLive.wav";
             soundLive.Play();
         }
 
         private static void SoundOfGameOver() // Chernogorov
         {
             SoundPlayer soundGameOver = new SoundPlayer();
-            soundGameOver.SoundLocation = @"F:\GIT\C#\TEAM_SMOKE\pingpong2\PingPong\gameOver.wav";
+            soundGameOver.SoundLocation = @"..\\..\\..\\gameOver.wav";
             soundGameOver.Play();
             Console.Read();
 
@@ -372,7 +372,7 @@ namespace PingPong
         private static void SoundOfJumpBall() //Chernogorov 
         {
             SoundPlayer soundJumpBall = new SoundPlayer();
-            soundJumpBall.SoundLocation = @"F:\GIT\C#\TEAM_SMOKE\pingpong2\PingPong\jumpBall.wav";
+            soundJumpBall.SoundLocation = @"..\\..\\..\\jumpBall.wav";
             soundJumpBall.Play();
 
 
