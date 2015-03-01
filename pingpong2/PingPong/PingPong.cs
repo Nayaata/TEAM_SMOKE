@@ -335,11 +335,11 @@ namespace PingPong
             Console.BufferWidth = Console.WindowWidth = 70;    //Niya Keranova
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.Title = "TEAM SMOKE - PING-PONG GAME";   // Nikk-Dzhurov
-           //Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
-           //Greatings();    //Niya Keranova
-           //Loading();      //Niya Keranova
-           //Startup();      //Niya Keranova
-           //Loading();      //Niya Keranova
+            Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
+            Greatings();    //Niya Keranova
+            Loading();      //Niya Keranova
+            Startup();      //Niya Keranova
+            Loading();      //Niya Keranova
             
             //database = new Dictionary<string, int>(); // Todor Dimitrov
             //LoadResults(); // Todor Dimitrov
