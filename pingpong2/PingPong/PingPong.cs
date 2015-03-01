@@ -216,6 +216,7 @@ namespace PingPong
             int i = 0;
             while (i != 7)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Loading : (|)");
                 Thread.Sleep(50);
                 Console.Clear();
