@@ -173,7 +173,7 @@ namespace PingPong
 
         static void Startup() //Niya Keranova
         {
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             string title = "PING-PONG GAME";
             Console.CursorLeft = Console.BufferWidth / 2 - title.Length / 2;
             Console.WriteLine(title);
@@ -185,7 +185,7 @@ namespace PingPong
             Console.CursorLeft = cursorLeft;
             string oneRow = "Player's controls:";
             Console.WriteLine(oneRow);
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.CursorLeft = cursorLeft;
             string twoRow = "Leftarow (<-) - Left";
             Console.WriteLine(twoRow);
@@ -198,7 +198,7 @@ namespace PingPong
         }
         static void Greatings() //Niya Keranova
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             string greatings = "TEAM SMOKE: PING-PONG GAME";
             int y = Console.WindowHeight / 2;
             int x = (Console.WindowWidth / 2 + 10) - greatings.Length;
