@@ -74,15 +74,15 @@ namespace PingPong
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.CursorVisible = false;
-            char[,] matrix ={   {' ', ' ', ' ', 'ง', ' ', ' ', ' ', ' '},                        
-                                {' ', ' ', 'ง', ' ', 'ง', ' ', ' ', ' '},
-                                {' ', 'ง', ' ', ' ', ' ', 'ง', ' ', ' '},
-                                {' ', ' ', 'ง', ' ', ' ', 'ง', 'ง', ' '},
-                                {' ', ' ', ' ', 'ง', ' ', ' ', 'ง', 'ง'},
-                                {' ', ' ', 'ง', 'ง', ' ', ' ', ' ', 'ง'},
-                                {' ', ' ', ' ', 'ง', ' ', ' ', 'ง', ' '},
-                                {' ', ' ', ' ', ' ', 'ง', ' ', 'ง', ' '},
-                                {' ', ' ', ' ', ' ', ' ', 'ง', ' ', ' '},
+            char[,] matrix ={   {' ', ' ', ' ', 'ยง', ' ', ' ', ' ', ' '},                        
+                                {' ', ' ', 'ยง', ' ', 'ยง', ' ', ' ', ' '},
+                                {' ', 'ยง', ' ', ' ', ' ', 'ยง', ' ', ' '},
+                                {' ', ' ', 'ยง', ' ', ' ', 'ยง', 'ยง', ' '},
+                                {' ', ' ', ' ', 'ยง', ' ', ' ', 'ยง', 'ยง'},
+                                {' ', ' ', 'ยง', 'ยง', ' ', ' ', ' ', 'ยง'},
+                                {' ', ' ', ' ', 'ยง', ' ', ' ', 'ยง', ' '},
+                                {' ', ' ', ' ', ' ', 'ยง', ' ', 'ยง', ' '},
+                                {' ', ' ', ' ', ' ', ' ', 'ยง', ' ', ' '},
                                 {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
                                 {' ', ' ', ' ', ' ', ' ', '*', ' ', ' '},
                                 {' ', ' ', ' ', ' ', ' ', '*', '*', ' '},
@@ -145,8 +145,8 @@ namespace PingPong
 
         static void ConsoleView() //Niya Keranova
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.BackgroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
            
             int height = Console.BufferHeight;
             int width = Console.BufferWidth;
@@ -179,7 +179,7 @@ namespace PingPong
             Console.WriteLine(title);
             
             string longestString = "Rightarow (->) - Right";
-            int cursorLeft = Console.BufferWidth - longestString.Length * 2 - 10;
+            int cursorLeft = Console.BufferWidth - longestString.Length * 2 - 1;
 
             Console.CursorTop = 5;
             Console.CursorLeft = cursorLeft;
@@ -214,7 +214,7 @@ namespace PingPong
         static void Loading() //Niya Keranova
         {
             int i = 0;
-            while (i != 8)
+            while (i != 7)
             {
                 Console.WriteLine("Loading : (|)");
                 Thread.Sleep(50);
