@@ -266,7 +266,7 @@ namespace PingPong
             Console.BufferHeight = Console.WindowHeight = 35; //Niya Keranova
             Console.BufferWidth = Console.WindowWidth = 90;   //Niya Keranova
             Console.Title = "TEAM SMOKE - PING-PONG GAME";   // Nikk-Dzhurov
-            Logo(40, 5);    // Nikk-Dzhurov
+            Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
             Greatings();    //Niya Keranova
             Loading();      //Niya Keranova
             Startup();      //Niya Keranova
