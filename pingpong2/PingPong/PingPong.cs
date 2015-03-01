@@ -91,15 +91,15 @@ namespace PingPong
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.CursorVisible = false;
-            char[,] matrix ={   {' ', ' ', ' ', 'ง', ' ', ' ', ' ', ' '},                        
-                                {' ', ' ', 'ง', ' ', 'ง', ' ', ' ', ' '},
-                                {' ', 'ง', ' ', ' ', ' ', 'ง', ' ', ' '},
-                                {' ', ' ', 'ง', ' ', ' ', 'ง', 'ง', ' '},
-                                {' ', ' ', ' ', 'ง', ' ', ' ', 'ง', 'ง'},
-                                {' ', ' ', 'ง', 'ง', ' ', ' ', ' ', 'ง'},
-                                {' ', ' ', ' ', 'ง', ' ', ' ', 'ง', ' '},
-                                {' ', ' ', ' ', ' ', 'ง', ' ', 'ง', ' '},
-                                {' ', ' ', ' ', ' ', ' ', 'ง', ' ', ' '},
+            char[,] matrix ={   {' ', ' ', ' ', 'ยง', ' ', ' ', ' ', ' '},                        
+                                {' ', ' ', 'ยง', ' ', 'ยง', ' ', ' ', ' '},
+                                {' ', 'ยง', ' ', ' ', ' ', 'ยง', ' ', ' '},
+                                {' ', ' ', 'ยง', ' ', ' ', 'ยง', 'ยง', ' '},
+                                {' ', ' ', ' ', 'ยง', ' ', ' ', 'ยง', 'ยง'},
+                                {' ', ' ', 'ยง', 'ยง', ' ', ' ', ' ', 'ยง'},
+                                {' ', ' ', ' ', 'ยง', ' ', ' ', 'ยง', ' '},
+                                {' ', ' ', ' ', ' ', 'ยง', ' ', 'ยง', ' '},
+                                {' ', ' ', ' ', ' ', ' ', 'ยง', ' ', ' '},
                                 {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
                                 {' ', ' ', ' ', ' ', ' ', '*', ' ', ' '},
                                 {' ', ' ', ' ', ' ', ' ', '*', '*', ' '},
@@ -162,9 +162,15 @@ namespace PingPong
 
         static void ConsoleView() //Niya Keranova
         {
+<<<<<<< HEAD
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.BackgroundColor = ConsoleColor.DarkCyan;
 
+=======
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+           
+>>>>>>> 16d7c34bb5abcb14b1a811619b6cca6dc4c34425
             int height = Console.BufferHeight;
             int width = Console.BufferWidth;
             for (int i = 0; i < width; i++)
@@ -190,19 +196,19 @@ namespace PingPong
 
         static void Startup() //Niya Keranova
         {
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             string title = "PING-PONG GAME";
             Console.CursorLeft = Console.BufferWidth / 2 - title.Length / 2;
             Console.WriteLine(title);
 
             string longestString = "Rightarow (->) - Right";
-            int cursorLeft = Console.BufferWidth - longestString.Length * 2 - 10;
+            int cursorLeft = Console.BufferWidth - longestString.Length * 2 - 1;
 
             Console.CursorTop = 5;
             Console.CursorLeft = cursorLeft;
             string oneRow = "Player's controls:";
             Console.WriteLine(oneRow);
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.CursorLeft = cursorLeft;
             string twoRow = "Leftarow (<-) - Left";
             Console.WriteLine(twoRow);
@@ -215,7 +221,7 @@ namespace PingPong
         }
         static void Greatings() //Niya Keranova
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             string greatings = "TEAM SMOKE: PING-PONG GAME";
             int y = Console.WindowHeight / 2;
             int x = (Console.WindowWidth / 2 + 10) - greatings.Length;
@@ -231,8 +237,9 @@ namespace PingPong
         static void Loading() //Niya Keranova
         {
             int i = 0;
-            while (i != 8)
+            while (i != 7)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Loading : (|)");
                 Thread.Sleep(50);
                 Console.Clear();
@@ -379,12 +386,21 @@ namespace PingPong
             Console.BufferWidth = Console.WindowWidth = 70;    //Niya Keranova
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.Title = "TEAM SMOKE - PING-PONG GAME";   // Nikk-Dzhurov
+<<<<<<< HEAD
             //Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
             //Greatings();    //Niya Keranova
             //Loading();      //Niya Keranova
             //Startup();      //Niya Keranova
             //Loading();      //Niya Keranova
 
+=======
+            Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
+            Greatings();    //Niya Keranova
+            Loading();      //Niya Keranova
+            Startup();      //Niya Keranova
+            Loading();      //Niya Keranova
+            
+>>>>>>> 16d7c34bb5abcb14b1a811619b6cca6dc4c34425
             //database = new Dictionary<string, int>(); // Todor Dimitrov
             //LoadResults(); // Todor Dimitrov
             //RegisterPlayer(); // Todor Dimitrov
