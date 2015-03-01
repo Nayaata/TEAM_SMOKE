@@ -162,15 +162,15 @@ namespace PingPong
 
         static void ConsoleView() //Niya Keranova
         {
-<<<<<<< HEAD
+
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.BackgroundColor = ConsoleColor.DarkCyan;
 
-=======
+
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkGreen;
            
->>>>>>> 16d7c34bb5abcb14b1a811619b6cca6dc4c34425
+
             int height = Console.BufferHeight;
             int width = Console.BufferWidth;
             for (int i = 0; i < width; i++)
@@ -386,21 +386,21 @@ namespace PingPong
             Console.BufferWidth = Console.WindowWidth = 70;    //Niya Keranova
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.Title = "TEAM SMOKE - PING-PONG GAME";   // Nikk-Dzhurov
-<<<<<<< HEAD
+
             //Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
             //Greatings();    //Niya Keranova
             //Loading();      //Niya Keranova
             //Startup();      //Niya Keranova
             //Loading();      //Niya Keranova
 
-=======
+
             Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2);    // Nikk-Dzhurov
             Greatings();    //Niya Keranova
             Loading();      //Niya Keranova
             Startup();      //Niya Keranova
             Loading();      //Niya Keranova
             
->>>>>>> 16d7c34bb5abcb14b1a811619b6cca6dc4c34425
+
             //database = new Dictionary<string, int>(); // Todor Dimitrov
             //LoadResults(); // Todor Dimitrov
             //RegisterPlayer(); // Todor Dimitrov

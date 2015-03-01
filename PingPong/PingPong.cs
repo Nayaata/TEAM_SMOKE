@@ -261,6 +261,8 @@ namespace PingPong
                  }
              }
          }
+
+         
         static void Main()
         {
             Console.BufferHeight = Console.WindowHeight = 35; //Niya Keranova
