@@ -23,31 +23,35 @@ namespace PingPong
         static int PaddlePositionY = height - 4;
         static int BallPosX = width / 2 - 5;
         static int BallPosY = height / 2 + 5;
-        static int BallPosX2 = width / 2 ;
-        static int BallPosY2 = height / 2 ;
+        static int BallPosX2 = width / 2;
+        static int BallPosY2 = height / 2;
         static bool BallDirectionUp = true;
         static bool BallDirectionUp2 = true;
         static bool BallDirectionRight = true;
         static bool BallDirectionRight2 = true;
         static int points = 0;
         static int levels = 1;
-        
+
         private static void MoveBall() // Nikk-Dzhurov
         {
             if (BallPosX == Console.WindowWidth - 4)
             {
+                SoundOfInpactWall();
                 BallDirectionRight = false;
             }
             if (BallPosX == 2)
             {
+                SoundOfInpactWall();
                 BallDirectionRight = true;
             }
             if (BallPosY == 1)
             {
+                SoundOfInpactWall();
                 BallDirectionUp = false;
             }
             if (BallPosY == Console.WindowHeight - 3)
             {
+                SoundOfInpactWall();
                 BallDirectionUp = true;
             }
             if (BallDirectionUp)
@@ -73,18 +77,22 @@ namespace PingPong
         {
             if (BallPosX2 == Console.WindowWidth - 4)
             {
+                SoundOfInpactWall();
                 BallDirectionRight2 = false;
             }
             if (BallPosX2 == 2)
             {
+                SoundOfInpactWall();
                 BallDirectionRight2 = true;
             }
             if (BallPosY2 == 1)
             {
+                SoundOfInpactWall();
                 BallDirectionUp2 = false;
             }
             if (BallPosY2 == Console.WindowHeight - 3)
             {
+                SoundOfInpactWall();
                 BallDirectionUp2 = true;
             }
             if (BallDirectionUp2)
@@ -94,7 +102,7 @@ namespace PingPong
             else
             {
                 BallPosY2++;
-                SoundOfJumpBall(); 
+                SoundOfJumpBall();
             }
             if (BallDirectionRight2)
             {
@@ -357,6 +365,13 @@ namespace PingPong
                 }
             }
         }
+
+        private static void SoundOfInpactWall() // Chernogorov
+        {
+            SoundPlayer soundWall = new SoundPlayer();
+            soundWall.SoundLocation = @"..\\..\\..\\soundWall.wav";
+            soundWall.Play();
+        }
         private static void SoundOfGameNewLive() // Chernogorov
         {
             SoundPlayer soundLive = new SoundPlayer();
@@ -398,11 +413,11 @@ namespace PingPong
             Console.BufferWidth = Console.WindowWidth = 70; //Niya Keranova
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.Title = "TEAM SMOKE - PING-PONG GAME"; // Nikk-Dzhurov
-            //Logo((Console.WindowWidth - 8) / 2, (Console.WindowHeight - 22) / 2); // Nikk-Dzhurov
-            //Greatings(); //Niya Keranova
-            //Loading(); //Niya Keranova
-            //Startup(); //Niya Keranova
-            //Loading(); //Niya Keranova
+            Logo((Console.WindowWidth - 8) / 2, (Console.WindowHeight - 22) / 2); // Nikk-Dzhurov
+            Greatings(); //Niya Keranova
+            Loading(); //Niya Keranova
+            Startup(); //Niya Keranova
+            Loading(); //Niya Keranova
             database = new Dictionary<string, int>(); // Todor Dimitrov
             LoadResults(); // Todor Dimitrov
             RegisterPlayer(); // Todor Dimitrov
@@ -429,26 +444,26 @@ namespace PingPong
                 PrintAtPosition(BallPosX, BallPosY, '\u00A9', ConsoleColor.Green); // Nikk-Dzhurov
                 if (points > 4) // Peter Boev
                 {
-                    PrindSecondBall();                    
+                    PrindSecondBall();
                 }
-                if (BallPosY == PaddlePositionY - 1 ) // Nikk-Dzhurov
-                { 
-                    if (BallPosX >= PaddlePositionX && BallPosX <= PaddlePositionX + PaddleLength) 
-                    { 
+                if (BallPosY == PaddlePositionY - 1) // Nikk-Dzhurov
+                {
+                    if (BallPosX >= PaddlePositionX && BallPosX <= PaddlePositionX + PaddleLength)
+                    {
                         points++; // Peter Boev
                         ColorOfPaddle = colours[stateOfColor++];
-                        if (stateOfColor > 2) 
-                        { 
-                            stateOfColor = 0; 
-                        } 
-                        BallDirectionUp = true; 
-                    } 
+                        if (stateOfColor > 2)
+                        {
+                            stateOfColor = 0;
+                        }
+                        BallDirectionUp = true;
+                    }
                 }
                 if (BallPosY2 == PaddlePositionY - 1) // Peter Boev
                 {
                     if (BallPosX2 >= PaddlePositionX && BallPosX2 <= PaddlePositionX + PaddleLength)
                     {
-                        points++; 
+                        points++;
                         ColorOfPaddle = colours[stateOfColor++];
                         if (stateOfColor > 2)
                         {
@@ -456,7 +471,7 @@ namespace PingPong
                         }
                         BallDirectionUp2 = true;
                     }
-                } 
+                }
                 if (BallPosY > PaddlePositionY || BallPosY2 > PaddlePositionY) // Nikk-Dzhurov
                 { // Nikk-Dzhurov
                     if (database[currentUsername] > points)
