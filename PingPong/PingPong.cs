@@ -364,31 +364,58 @@ namespace PingPong
                 }
             }
         }
-        private static void SoundOfInpactWall() // Chernogorov
+        private static void SoundOfInpactWall()                                       // Chernogorov
         {
-            SoundPlayer soundWall = new SoundPlayer();
-            soundWall.SoundLocation = @"..\\..\\..\\soundWall.wav";
-            soundWall.Play();
+            SoundPlayer soundWall = new SoundPlayer();                                // Chernogorov
+            soundWall.SoundLocation = @"..\\..\\..\\soundWall.wav";                   // Chernogorov
+            soundWall.Play();                                                         // Chernogorov
         }
-        private static void SoundOfGameNewLive() // Chernogorov
+        private static void SoundOfGameNewLive()                                      // Chernogorov
         {
-            SoundPlayer soundLive = new SoundPlayer();
-            soundLive.SoundLocation = @"..\\..\\..\\newLive.wav";
-            soundLive.Play();
+            SoundPlayer soundLive = new SoundPlayer();                              // Chernogorov
+            soundLive.SoundLocation = @"..\\..\\..\\newLive.wav";                   // Chernogorov
+            soundLive.Play();                                                       // Chernogorov
         }
-        private static void SoundOfGameOver() // Chernogorov
+        private static void SoundOfGameOver()                                       // Chernogorov
         {
-            SoundPlayer soundGameOver = new SoundPlayer();
-            soundGameOver.SoundLocation = @"..\\..\\..\\gameOver.wav";
-            soundGameOver.Play();
-            Console.Read();
+            SoundPlayer soundGameOver = new SoundPlayer();                          // Chernogorov
+            soundGameOver.SoundLocation = @"..\\..\\..\\gameOver.wav";              // Chernogorov
+            soundGameOver.Play();                                                   // Chernogorov
+           // Console.Read();
         }
-        private static void SoundOfJumpBall() //Chernogorov
+        private static void SoundOfJumpBall()                                       //Chernogorov
         {
-            SoundPlayer soundJumpBall = new SoundPlayer();
-            soundJumpBall.SoundLocation = @"..\\..\\..\\jumpBall.wav";
-            soundJumpBall.Play();
+            SoundPlayer soundJumpBall = new SoundPlayer();                          // Chernogorov
+            soundJumpBall.SoundLocation = @"..\\..\\..\\jumpBall.wav";              // Chernogorov
+            soundJumpBall.Play();                                                   // Chernogorov
         }
+        private static void ChoiceMenu()                                           //Chernogorov
+        {
+            
+            if (BallPosY > PaddlePositionY || BallPosY2 > PaddlePositionY)                               //Chernogorov
+            {
+                Console.SetCursorPosition((Console.WindowWidth - 23) / 2 , Console.WindowHeight - 20);   //Chernogorov
+                Console.WriteLine("Press key 'A' for new Game!");                                        //Chernogorov
+                Console.SetCursorPosition((Console.WindowWidth - 2) / 2, Console.WindowHeight - 18);     //Chernogorov
+                Console.WriteLine("OR");                                                                 //Chernogorov
+                Console.SetCursorPosition((Console.WindowWidth - 23) / 2, Console.WindowHeight - 16);    //Chernogorov
+                Console.WriteLine("Press key 'S' for list result!");                                     //Chernogorov
+                ConsoleKeyInfo keyOne = Console.ReadKey();                                               //Chernogorov
+                if (keyOne.KeyChar == 'a')                                                               //Chernogorov
+                {
+                    Console.Clear();                                                                     //Chernogorov
+                    Main();                                                                              //Chernogorov
+                }
+                if (keyOne.KeyChar == 's')                                                               //Chernogorov
+                {
+                    Console.Clear();                                                                     //Chernogorov
+                    string text = System.IO.File.ReadAllText("..\\..\\..\\results.txt");                 // Chernogorov
+                    Console.WriteLine(text);                                                             // Chernogorov
+                }
+
+            }
+        }
+
         static void PrintPoints() // Peter Boev
         {
             Console.SetCursorPosition(Console.WindowWidth / 2 - 10, 0);
@@ -483,7 +510,8 @@ namespace PingPong
                     }
                     Console.SetCursorPosition((Console.WindowWidth - 9) / 2, Console.WindowHeight / 2); // Nikk-Dzhurov
                     Console.Write("Game Over!"); // Nikk-Dzhurov
-                    SoundOfGameOver(); // Chernogorov
+                    SoundOfGameOver(); // Chernogorov   
+                    ChoiceMenu();// Chernogorov
                     Console.SetCursorPosition((Console.WindowWidth - 30) / 2, Console.WindowHeight / 2 + 2); // Nikk-Dzhurov
                     break; // Nikk-Dzhurov
                 }
