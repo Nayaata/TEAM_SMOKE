@@ -377,19 +377,19 @@ namespace PingPong
             soundJumpBall.SoundLocation = @"..\\..\\..\\jumpBall.wav";
             soundJumpBall.Play();
         }
-        static void PrintPoints()
+        static void PrintPoints() // Peter Boev
         {
             Console.SetCursorPosition(Console.WindowWidth / 2 - 10, 0);
             Console.Write("Points : {0}", points);
         }
-        static void PrintLevel()
+        static void PrintLevel() // Peter Boev
         {
             Console.SetCursorPosition(Console.WindowWidth / 2 + 6, 0);
             Console.Write("Level : {0}", levels);
         }
-        static void PrindSecondBall()
+        static void PrindSecondBall() // Peter Boev
         {
-            PrintAtPosition(BallPosX, BallPosY, '\u00A9', ConsoleColor.White);
+            PrintAtPosition(BallPosX2, BallPosY2, '\u00A9', ConsoleColor.Red);
         }
         static void Main()
         {
@@ -399,16 +399,11 @@ namespace PingPong
             Console.BufferWidth = Console.WindowWidth = 70; //Niya Keranova
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.Title = "TEAM SMOKE - PING-PONG GAME"; // Nikk-Dzhurov
-            //Logo((Console.WindowWidth-8)/2, (Console.WindowHeight-22)/2); // Nikk-Dzhurov
+            //Logo((Console.WindowWidth - 8) / 2, (Console.WindowHeight - 22) / 2); // Nikk-Dzhurov
             //Greatings(); //Niya Keranova
             //Loading(); //Niya Keranova
             //Startup(); //Niya Keranova
             //Loading(); //Niya Keranova
-           // Logo((Console.WindowWidth - 8) / 2, (Console.WindowHeight - 22) / 2); // Nikk-Dzhurov
-           // Greatings(); //Niya Keranova
-           // Loading(); //Niya Keranova
-           // Startup(); //Niya Keranova
-           // Loading(); //Niya Keranova
             //database = new Dictionary<string, int>(); // Todor Dimitrov
             //LoadResults(); // Todor Dimitrov
             //RegisterPlayer(); // Todor Dimitrov
@@ -423,8 +418,8 @@ namespace PingPong
             Console.ReadKey();
             while (true)
             {
-                PrintPoints();
-                PrintLevel();
+                PrintPoints(); // Peter Boev
+                PrintLevel(); // Peter Boev
                 MoveBall(); // Nicola
                 if (points > 4) { levels = 2; MoveBall2(); } //Peter Boev
                 MovePaddle(); // Nicola
@@ -433,9 +428,9 @@ namespace PingPong
                 ClearBox(); // Nikk-Dzhurov
                 PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength, ColorOfPaddle); // Nikk-Dzhurov
                 PrintAtPosition(BallPosX, BallPosY, '\u00A9', ConsoleColor.Green); // Nikk-Dzhurov
-                if (points > 4)
+                if (points > 4) // Peter Boev
                 {
-                    PrintAtPosition(BallPosX2, BallPosY2, '\u00A9', ConsoleColor.Red);
+                    PrindSecondBall();                    
                 }
                 if (BallPosY == PaddlePositionY - 1 ) // Nikk-Dzhurov
                 { 
