@@ -404,9 +404,9 @@ namespace PingPong
             //Loading(); //Niya Keranova
             //Startup(); //Niya Keranova
             //Loading(); //Niya Keranova
-            //database = new Dictionary<string, int>(); // Todor Dimitrov
-            //LoadResults(); // Todor Dimitrov
-            //RegisterPlayer(); // Todor Dimitrov
+            database = new Dictionary<string, int>(); // Todor Dimitrov
+            LoadResults(); // Todor Dimitrov
+            RegisterPlayer(); // Todor Dimitrov
             Console.CursorVisible = false;
             ConsoleView(); //Niya Keranova            
             Console.ForegroundColor = ConsoleColor.Red; // Nikk-Dzhurov
@@ -460,6 +460,8 @@ namespace PingPong
                 } 
                 if (BallPosY > PaddlePositionY || BallPosY2 > PaddlePositionY) // Nikk-Dzhurov
                 { // Nikk-Dzhurov
+                    database[currentUsername] = points;
+                    SaveChanges();
                     Console.SetCursorPosition((Console.WindowWidth - 9) / 2, Console.WindowHeight / 2); // Nikk-Dzhurov
                     Console.Write("Game Over!"); // Nikk-Dzhurov
                     SoundOfGameOver(); // Chernogorov
