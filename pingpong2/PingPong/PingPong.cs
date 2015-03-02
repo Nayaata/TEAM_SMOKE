@@ -301,8 +301,13 @@ namespace PingPong
         }
         private static void RegisterPlayer() // Todor Dimitrov
         {
-            Console.Write("Enter your username: ");
-            currentUsername = Console.ReadLine();
+            do
+            {
+                Console.Write("Enter your username: ");
+                currentUsername = Console.ReadLine();
+                
+            } while (string.IsNullOrWhiteSpace(currentUsername));
+
             if (!database.Keys.Any(username => username == currentUsername))
             {
                 database.Add(currentUsername, 0);
@@ -397,9 +402,9 @@ namespace PingPong
            // Loading();      //Niya Keranova
             
 
-            //database = new Dictionary<string, int>(); // Todor Dimitrov
-            //LoadResults(); // Todor Dimitrov
-            //RegisterPlayer(); // Todor Dimitrov
+            database = new Dictionary<string, int>(); // Todor Dimitrov
+            LoadResults(); // Todor Dimitrov
+            RegisterPlayer(); // Todor Dimitrov
             Console.CursorVisible = false;
 
             ConsoleView();  //Niya Keranova
