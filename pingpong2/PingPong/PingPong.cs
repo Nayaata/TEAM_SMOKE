@@ -460,8 +460,11 @@ namespace PingPong
                 } 
                 if (BallPosY > PaddlePositionY || BallPosY2 > PaddlePositionY) // Nikk-Dzhurov
                 { // Nikk-Dzhurov
-                    database[currentUsername] = points;
-                    SaveChanges();
+                    if (database[currentUsername] > points)
+                    {
+                        database[currentUsername] = points;
+                        SaveChanges();
+                    }
                     Console.SetCursorPosition((Console.WindowWidth - 9) / 2, Console.WindowHeight / 2); // Nikk-Dzhurov
                     Console.Write("Game Over!"); // Nikk-Dzhurov
                     SoundOfGameOver(); // Chernogorov
