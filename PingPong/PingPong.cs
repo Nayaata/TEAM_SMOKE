@@ -381,7 +381,7 @@ namespace PingPong
             SoundPlayer soundGameOver = new SoundPlayer();                          // Chernogorov
             soundGameOver.SoundLocation = @"..\\..\\..\\gameOver.wav";              // Chernogorov
             soundGameOver.Play();                                                   // Chernogorov
-           // Console.Read();
+            Console.Read();
         }
         private static void SoundOfJumpBall()                                       //Chernogorov
         {
