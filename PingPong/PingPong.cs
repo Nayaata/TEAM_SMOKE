@@ -221,14 +221,19 @@ namespace PingPong
         }
         private static void RegisterPlayer() // Todor Dimitrov
         {
-            Console.Write("Enter your username: ");
-            currentUsername = Console.ReadLine();
+            do
+            {
+                Console.Write("Enter your username: ");
+                currentUsername = Console.ReadLine();
+                Console.Clear();
+            } while (string.IsNullOrWhiteSpace(currentUsername));
+
             if (!database.Keys.Any(username => username == currentUsername))
             {
                 database.Add(currentUsername, 0);
                 SaveChanges();
             }
-            Console.Clear();
+
         }
          private static void SaveChanges() // Todor Dimitrov
          {
