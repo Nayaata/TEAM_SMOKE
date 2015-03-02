@@ -381,7 +381,8 @@ namespace PingPong
             SoundPlayer soundGameOver = new SoundPlayer();                          // Chernogorov
             soundGameOver.SoundLocation = @"..\\..\\..\\gameOver.wav";              // Chernogorov
             soundGameOver.Play();                                                   // Chernogorov
-            Console.Read();
+            Thread.Sleep(300);
+            
         }
         private static void SoundOfJumpBall()                                       //Chernogorov
         {
@@ -394,12 +395,15 @@ namespace PingPong
             
             if (BallPosY > PaddlePositionY || BallPosY2 > PaddlePositionY)                               //Chernogorov
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.SetCursorPosition((Console.WindowWidth - 23) / 2 , Console.WindowHeight - 20);   //Chernogorov
                 Console.WriteLine("Press key 'A' for new Game!");                                        //Chernogorov
                 Console.SetCursorPosition((Console.WindowWidth - 2) / 2, Console.WindowHeight - 18);     //Chernogorov
                 Console.WriteLine("OR");                                                                 //Chernogorov
                 Console.SetCursorPosition((Console.WindowWidth - 23) / 2, Console.WindowHeight - 16);    //Chernogorov
-                Console.WriteLine("Press key 'S' for list result!");                                     //Chernogorov
+                Console.WriteLine("Press key 'S' for list result!");
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.SetCursorPosition((Console.WindowWidth - 23) / 2, Console.WindowHeight - 33); //Chernogorov
                 ConsoleKeyInfo keyOne = Console.ReadKey();                                               //Chernogorov
                 if (keyOne.KeyChar == 'a')                                                               //Chernogorov
                 {
@@ -409,8 +413,12 @@ namespace PingPong
                 if (keyOne.KeyChar == 's')                                                               //Chernogorov
                 {
                     Console.Clear();                                                                     //Chernogorov
-                    string text = System.IO.File.ReadAllText("..\\..\\..\\results.txt");                 // Chernogorov
-                    Console.WriteLine(text);                                                             // Chernogorov
+                    string text = System.IO.File.ReadAllText("..\\..\\..\\results.txt");                 //Chernogorov
+                    Console.WriteLine(text);                                                             //Chernogorov
+                }
+                if (keyOne.KeyChar != 's' && keyOne.KeyChar != 'a')
+                {
+                    ChoiceMenu();
                 }
 
             }
@@ -434,6 +442,17 @@ namespace PingPong
         }
         static void Main()
         {
+            PaddlePositionX = width / 2 - PaddleLength / 2;
+            PaddlePositionY = height - 4;
+            BallPosX = width / 2 - 5;
+            BallPosY = height / 2 + 5;
+            BallPosX2 = width / 2;
+            BallPosY2 = height / 2;
+            BallDirectionUp = true;
+            BallDirectionUp2 = true;
+            points = 0;
+            levels = 1;
+
             int stateOfColor = 1;
             ConsoleColor[] colours = { ConsoleColor.White, ConsoleColor.Green, ConsoleColor.Red };
             Console.BufferHeight = Console.WindowHeight = 45; //Niya Keranova
