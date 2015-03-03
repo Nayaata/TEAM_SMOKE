@@ -1,4 +1,4 @@
-//The first team project.
+﻿//The first team project.
 namespace PingPong
 {
     using System;
@@ -295,6 +295,7 @@ namespace PingPong
                 }
             }
             
+		// Nikola Pineda + Emanuela
             static void PlayerMoveLeft(int padPositionX)
             {
                 if (PaddlePositionX < Console.WindowWidth - PaddleLength - 2)
@@ -304,6 +305,7 @@ namespace PingPong
                 PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength, ColorOfPaddle);
             }
             
+		// Nikola Pineda + Emanuela
             static void PlayerMoveRigth(int padPositionX)
             {
                 if (PaddlePositionX > 2)
@@ -313,6 +315,7 @@ namespace PingPong
                 PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength, ColorOfPaddle);
             }
             
+		// Nikola Pineda + Emanuela
             static void MovePaddle()
             {
                 if (Console.KeyAvailable)
