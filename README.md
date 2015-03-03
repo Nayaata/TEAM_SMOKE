@@ -1,32 +1,17 @@
-# TEAM_SMOKE
+TEAM_SMOKE
 
+Game PING-PONG
 
-Игра ПИНГ-ПОНГ
+Methods:
 
- Методи:
- 
- 
-1.Изглед на конзолата. - Ния Керанова 
+Nikk-Dzhurov ---> Logo();     ClearBox();     MoveBall();      PrintAtPosition();                 
 
-2.Изглед на топчето и хилката.- Еми Кръстева
+Hristo Chernogorov ---> SoundOfInpactWall();    SoundOfGameOver();   SoundOfJumpBall();    ChoiceMenu(); 
 
-3.Нива с увеличаване на топчетата. - Петър Боев
+Todor Dimitrov --->  PrindSecondBall();     RegisterPlayer();    SaveChanges();     LoadResults();                   
+                          
+Peter Boev --->  MoveBall2();   PrintPoints();   PrintLevel();  PrindSecondBall();
 
-4.Отброяване на точките. -Иво
+Niya Keranova --->  ConsoleView();  Startup();  Greatings();  Loading();
 
-5.Таймер за обратно броене 3 мин.Който като изтече ако 
-нямаш определен брой точки.Обратно същото ниво. -  Наталия Найденова
-
-6.Смяна на цвета на топчето и на хилката при всеки удър. - Ники
-
-7.Лист с имена на играчи и техните точки. - TodorDimitrov
-Методи - RegisterPlayer, LoadResults, SaveChanges и database в rеsults.txt
-
-8.Условие за Game Over. - Биби
-
-9.Бонус животи при улавяне на падащ елемент. - Никола Пинеда
-
-10.Звук при удари на топчето при нов живот и при Game Over. - Христо
-
-
-файл.тхт в него ще се съдържат имената и точките на играчите.
+Nikola Pineda + Emanuela ---> PlayerMoveLeft();  PlayerMoveRigth();  MovePaddle();
