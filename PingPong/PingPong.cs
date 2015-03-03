@@ -1,4 +1,7 @@
 //The first team project.
+namespace PingPong
+{
+    
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +10,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 using System.Media;
-namespace PingPong
-{
+
     class PingPong
     {
         private static Dictionary<string, int> database; // Todor Dimitrov
@@ -188,8 +190,6 @@ namespace PingPong
         }
         static void ConsoleView() //Niya Keranova
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.BackgroundColor = ConsoleColor.DarkCyan;
             Console.ForegroundColor = ConsoleColor.White;
             Console.BackgroundColor = ConsoleColor.DarkGreen;
             int height = Console.BufferHeight;
