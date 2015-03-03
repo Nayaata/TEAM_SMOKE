@@ -1,7 +1,6 @@
 //The first team project.
 namespace PingPong
 {
-    
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -122,6 +121,7 @@ namespace PingPong
                 Console.ForegroundColor = color;
                 Console.Write(symbol);
             }
+            
             static void Logo(int posX, int posY) // Nikk-Dzhurov
             {
                 Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -188,6 +188,7 @@ namespace PingPong
                 }
                 Console.SetCursorPosition(0, 0);
             }
+            
             static void ConsoleView() //Niya Keranova
             {
                 Console.ForegroundColor = ConsoleColor.White;
@@ -213,6 +214,7 @@ namespace PingPong
                     Console.Write(symbol);
                 }
             }
+            
             static void Startup() //Niya Keranova
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -235,6 +237,7 @@ namespace PingPong
                 Console.ReadKey();
                 Console.Clear();
             }
+            
             static void Greatings() //Niya Keranova
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -249,6 +252,7 @@ namespace PingPong
                 }
                 Thread.Sleep(1500);
             }
+            
             static void Loading() //Niya Keranova
             {
                 int i = 0;
@@ -270,6 +274,7 @@ namespace PingPong
                     i++;
                 }
             }
+            
             static void PrintPaddlePossition(int x, int y, char symbolPaddle, int length, ConsoleColor color)
             {
                 Console.ForegroundColor = color;
@@ -278,6 +283,7 @@ namespace PingPong
                 Console.SetCursorPosition(x, y - 1);
                 Console.Write(new string(symbolPaddle, length));
             }
+            
             static void ClearBox() // Nikk-Dzhurov
             {
                 for (int i = 1; i < Console.WindowHeight - 2; i++)
@@ -288,6 +294,7 @@ namespace PingPong
                     Console.Write(new string(' ', Console.WindowWidth - 4));
                 }
             }
+            
             static void PlayerMoveLeft(int padPositionX)
             {
                 if (PaddlePositionX < Console.WindowWidth - PaddleLength - 2)
@@ -296,6 +303,7 @@ namespace PingPong
                 }
                 PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength, ColorOfPaddle);
             }
+            
             static void PlayerMoveRigth(int padPositionX)
             {
                 if (PaddlePositionX > 2)
@@ -304,6 +312,7 @@ namespace PingPong
                 }
                 PrintPaddlePossition(PaddlePositionX, PaddlePositionY, symbolPaddle, PaddleLength, ColorOfPaddle);
             }
+            
             static void MovePaddle()
             {
                 if (Console.KeyAvailable)
@@ -319,6 +328,7 @@ namespace PingPong
                     }
                 }
             }
+            
             private static void RegisterPlayer() // Todor Dimitrov
             {
                 do
@@ -333,6 +343,7 @@ namespace PingPong
                 }
                 Console.Clear();
             }
+            
             private static void SaveChanges() // Todor Dimitrov
             {
                 StreamWriter writer = new StreamWriter("..\\..\\..\\results.txt");
@@ -345,6 +356,7 @@ namespace PingPong
                     }
                 }
             }
+            
             private static void LoadResults() // Todor Dimitrov
             {
                 StreamReader reader = new StreamReader("..\\..\\..\\results.txt");
@@ -364,18 +376,21 @@ namespace PingPong
                     }
                 }
             }
+            
             private static void SoundOfInpactWall()                                       // Chernogorov
             {
                 SoundPlayer soundWall = new SoundPlayer();                                // Chernogorov
                 soundWall.SoundLocation = @"..\\..\\..\\soundWall.wav";                   // Chernogorov
                 soundWall.Play();                                                         // Chernogorov
             }
+            
             private static void SoundOfGameNewLive()                                      // Chernogorov
             {
                 SoundPlayer soundLive = new SoundPlayer();                              // Chernogorov
                 soundLive.SoundLocation = @"..\\..\\..\\newLive.wav";                   // Chernogorov
                 soundLive.Play();                                                       // Chernogorov
             }
+            
             private static void SoundOfGameOver()                                       // Chernogorov
             {
                 SoundPlayer soundGameOver = new SoundPlayer();                          // Chernogorov
@@ -384,12 +399,14 @@ namespace PingPong
                 Thread.Sleep(300);
                 
             }
+            
             private static void SoundOfJumpBall()                                       //Chernogorov
             {
                 SoundPlayer soundJumpBall = new SoundPlayer();                          // Chernogorov
                 soundJumpBall.SoundLocation = @"..\\..\\..\\jumpBall.wav";              // Chernogorov
                 soundJumpBall.Play();                                                   // Chernogorov
             }
+            
             private static void ChoiceMenu()                                           //Chernogorov
             {
                 
@@ -429,6 +446,7 @@ namespace PingPong
                 Console.SetCursorPosition(Console.WindowWidth / 2 - 10, 0);
                 Console.Write("Points : {0}", points);
             }
+            
             static void PrintLevel() // Peter Boev
             {
                 Console.SetCursorPosition(Console.WindowWidth / 2 + 6, 0);
@@ -436,10 +454,12 @@ namespace PingPong
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(width - 20, height - 1);
             }
+            
             static void PrindSecondBall() // Peter Boev
             {
                 PrintAtPosition(BallPosX2, BallPosY2, '\u00A9', ConsoleColor.Red);
             }
+            
             static void Main()
             {
                 PaddlePositionX = width / 2 - PaddleLength / 2;
