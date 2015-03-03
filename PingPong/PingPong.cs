@@ -427,11 +427,21 @@ namespace PingPong
                         Console.Clear();                                                                     //Chernogorov
                         Main();                                                                              //Chernogorov
                     }
-                    if (keyOne.KeyChar == 's')                                                               //Chernogorov
+                    if (keyOne.KeyChar == 's')                                                               //TodorDimitrov
                     {
-                        Console.Clear();                                                                     //Chernogorov
-                        string text = System.IO.File.ReadAllText("..\\..\\..\\results.txt");                 //Chernogorov
-                        Console.WriteLine(text);                                                             //Chernogorov
+                        Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.White;
+                        var results = database.OrderByDescending(p => p.Value).ToDictionary(k => k.Key,k => k.Value);
+                        Console.WriteLine("Results".PadLeft((Console.WindowWidth / 2) - 7,' '));
+                        Console.WriteLine();
+                        foreach (var player in results)
+                        {
+                            string name = player.Key;
+                            string score = player.Value.ToString().PadLeft(Console.WindowWidth - name.Length, '-');
+                            Console.WriteLine("{0}{1}",name,score);
+                        }
+                        Console.WriteLine();
+                        Console.CursorVisible = false;
                     }
                     if (keyOne.KeyChar != 's' && keyOne.KeyChar != 'a')
                     {
@@ -542,7 +552,7 @@ namespace PingPong
                     } 
                     if (BallPosY > PaddlePositionY || BallPosY2 > PaddlePositionY) // Nikk-Dzhurov
                     { // Nikk-Dzhurov
-                        if (database[currentUsername] > points)
+                        if (database[currentUsername] < points)
                         {
                             database[currentUsername] = points;
                             SaveChanges();
