@@ -430,18 +430,26 @@ namespace PingPong
                     if (keyOne.KeyChar == 's')                                                               //TodorDimitrov
                     {
                         Console.Clear();
-                        Console.ForegroundColor = ConsoleColor.White;
-                        var results = database.OrderByDescending(p => p.Value).ToDictionary(k => k.Key,k => k.Value);
-                        Console.WriteLine("Results".PadLeft((Console.WindowWidth / 2) - 7,' '));
-                        Console.WriteLine();
-                        foreach (var player in results)
+                        if (database.Count > 0)
                         {
-                            string name = player.Key;
-                            string score = player.Value.ToString().PadLeft(Console.WindowWidth - name.Length, '-');
-                            Console.WriteLine("{0}{1}",name,score);
+                            Console.ForegroundColor = ConsoleColor.White;
+                            var results = database.OrderByDescending(p => p.Value).ToDictionary(k => k.Key, k => k.Value);
+                            Console.WriteLine("Results".PadLeft((Console.WindowWidth / 2) - 7, ' '));
+                            Console.WriteLine();
+                            foreach (var player in results)
+                            {
+                                string name = player.Key;
+                                string score = player.Value.ToString().PadLeft(Console.WindowWidth - name.Length, '-');
+                                Console.WriteLine("{0}{1}", name, score);
+                            }
+                            Console.WriteLine();
+                            Console.CursorVisible = false;
                         }
-                        Console.WriteLine();
-                        Console.CursorVisible = false;
+                        else
+                        {
+                            Console.WriteLine("No Results".PadLeft((Console.WindowWidth / 2) - 10, ' '));
+                        }
+
                     }
                     if (keyOne.KeyChar != 's' && keyOne.KeyChar != 'a')
                     {
