@@ -1,4 +1,4 @@
-﻿//The first team project.
+//The first team project.
 namespace PingPong
 {
     using System;
@@ -269,7 +269,7 @@ namespace PingPong
             static void Greatings() //Niya Keranova
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
-                string greatings = "TEAM SMOKE: PING-PONG GAME";
+                string greatings = "REPRESENT: PING-PONG GAME";
                 int y = Console.WindowHeight / 2;
                 int x = (Console.WindowWidth / 2 + 10) - greatings.Length;
                 Console.SetCursorPosition(x, y);
