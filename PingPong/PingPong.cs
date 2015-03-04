@@ -238,6 +238,34 @@ namespace PingPong
                 Console.Clear();
             }
             
+            static void GreatingsFromTheTeam() //Niya Keranova
+            {
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                //string greatings = "TEAM SMOKE: PING-PONG GAME";
+                string[] greatingsTitle =
+            {
+            "TTTTTT  EEEE   AA   M   M       SSS   M   M   OOO   K  K  EEEE",
+            "  TT    E     A  A  MM MM      S      MM MM  O   O  K K   E",    
+            "  TT    EEE   AAAA  M M M       SSS   M M M  O   O  KK    EEE",  
+            "  TT    E     A  A  M   M          S  M   M  O   O  K K   E",    
+            "  TT    EEEE  A  A  M   M ____ SSSS   M   M   OOO   K  K  EEEE"
+            };
+                int y = Console.WindowHeight / 2;
+                int x = 3;
+
+                for (int i = 0; i < greatingsTitle.Length; i++)
+                {
+                    Console.SetCursorPosition(x, y++);
+                    Console.Write(greatingsTitle[i]);
+                    Thread.Sleep(100);
+                }
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine();
+                Thread.Sleep(1500);
+
+            } 
+            
             static void Greatings() //Niya Keranova
             {
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -501,6 +529,8 @@ namespace PingPong
                 Console.OutputEncoding = System.Text.Encoding.UTF8;
                 Console.Title = "TEAM SMOKE - PING-PONG GAME"; // Nikk-Dzhurov
                 Logo((Console.WindowWidth - 8) / 2, (Console.WindowHeight - 22) / 2); // Nikk-Dzhurov
+                GreatingsFromTheTeam(); //NiyaKeranova
+                Loading(); //Niya Keranova
                 Greatings(); //Niya Keranova
                 Loading(); //Niya Keranova
                 Startup(); //Niya Keranova
