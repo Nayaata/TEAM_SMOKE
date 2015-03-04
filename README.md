@@ -4,7 +4,7 @@ Game PING-PONG
 
 Methods:
 
-Nikk-Dzhurov ---> Logo();     ClearBox();     MoveBall();      PrintAtPosition();                 
+Nikk-Dzhurov ---> Logo();     ClearBox();     MoveBall();      PrintAtPosition();  GreatingsFromTheTeam();               
 
 Hristo Chernogorov ---> SoundOfInpactWall();    SoundOfGameOver();   SoundOfJumpBall();    ChoiceMenu(); 
 
@@ -12,6 +12,6 @@ Todor Dimitrov --->  PrindSecondBall();     RegisterPlayer();    SaveChanges(); 
                           
 Peter Boev --->  MoveBall2();   PrintPoints();   PrintLevel();  PrindSecondBall();
 
-Niya Keranova --->  ConsoleView();  Startup();  Greatings();  Loading();
+Niya Keranova --->  ConsoleView();  Startup();  Greatings();  Loading();  GreatingsFromTheTeam();
 
 Nikola Pineda + Emanuela ---> PlayerMoveLeft();  PlayerMoveRigth();  MovePaddle();
